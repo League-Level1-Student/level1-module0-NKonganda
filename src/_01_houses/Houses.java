@@ -3,6 +3,8 @@ package _01_houses;
 import java.awt.Color;
 import java.util.Random;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class Houses {
@@ -27,12 +29,30 @@ public class Houses {
 			}
 		}
 	}
+	public void drawPointyRoof() {
+		call.turn(45);
+		call.move(15);
+		call.turn(90);
+		call.move(15);
+		call.turn(45);
+	}
+	public void drawFlatRoof() {
+	call.turn(90);
+	call.move(15);
+	call.turn(90);
+	}
 	public void drawhouse(int height, Color color) {
 		call.setPenColor(color);
 		call.move(height);
-		call.turn(90);
-		call.move(15);
-		call.turn(90);
+		if(height == 250) {
+			drawFlatRoof();
+		}
+		else if(height == 120 || height == 60) {
+			drawPointyRoof();
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Wrong height "+height);
+		}
 		call.move(height);
 		call.turn(-90);
 		call.setPenColor(Color.GREEN);
