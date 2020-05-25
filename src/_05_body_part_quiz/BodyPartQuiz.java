@@ -1,5 +1,4 @@
 package _05_body_part_quiz;
-
 /*
  *    Copyright (c) The League of Amazing Programmers 2013-2019
  *    Level 1
@@ -28,7 +27,6 @@ public class BodyPartQuiz {
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
-
 	public void run() {
 		initializeGui();
 		startQuiz();
@@ -39,7 +37,7 @@ public class BodyPartQuiz {
 		imageIterator = imageList.iterator();
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.add(panel);
-
+		
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
 		window.setSize(500, 500);
@@ -51,26 +49,41 @@ public class BodyPartQuiz {
 	private void startQuiz() {
 
 		// 1. Make an int variable to hold the score.
-
+		int score = 0;
 		// 2. Set the size of the window in the initializeGui() method 
-
+		
 		// 4. Ask the user who this person is and store their answer
 		String guess = JOptionPane.showInputDialog("who is this?");
 
 		// 5. Check their answer. If they guessed correctly:
 		// -- Tell them they are right and increase the score by 1
-
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
-
+		if(guess.equalsIgnoreCase("arnold schwarzenegger") || guess.equalsIgnoreCase("arnold")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score = +1;
+			JOptionPane.showMessageDialog(null, "Score = " + score);
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorect arnold schwarzenegger");
+			JOptionPane.showMessageDialog(null, "Score = " + score);
+		}
 		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 
 		// 8. .... repeat 4-7 for all your images.....
+		JOptionPane.showInputDialog("who is this?");
+
+		if(guess.equalsIgnoreCase("Leornardo Dicaprio") || guess.equalsIgnoreCase("Leo")) {
+			JOptionPane.showMessageDialog(null, "Correct!");
+			score = +1;
+			JOptionPane.showMessageDialog(null, "Score = " + score);
+		}
+		else {
+			JOptionPane.showMessageDialog(null, "Incorect Leornardo Dicaprio");
+			JOptionPane.showMessageDialog(null, "Score = " + score);
+		}
+		}
 
 		// 9. Show them their current score
-
-	}
 
 	public void showNextImage() {
 		panel.removeAll();

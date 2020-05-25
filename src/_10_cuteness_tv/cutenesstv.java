@@ -1,4 +1,4 @@
-package _09_sound_effects_machine;
+package _10_cuteness_tv;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,29 +8,26 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class SoundEffects implements ActionListener {
+public class cutenesstv implements ActionListener {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JButton button1 = new JButton("Play Sound drum");
-	JButton button2 = new JButton("Play Sound cymbal");
-	JButton button3 = new JButton("Play Sound Snare");
+	JButton button1 = new JButton("Play Video Ducks");
+	JButton button2 = new JButton("Play Video Frog");
+	JButton button3 = new JButton("Play Vidoe Unicorns");
 	public void showbutton() {
 		 frame.setVisible(true);
 		    frame.add(panel);
 		    button1.addActionListener(this);
 		    button2.addActionListener(this);
 		    button3.addActionListener(this);
-		    button1.setText("cymbal");
-		    button2.setText("drum");
-		    button3.setText("snare");
+		    button1.setText("Ducks");
+		    button2.setText("Frog");
+		    button3.setText("Unicorns");
 		    panel.add(button1);
 		    panel.add(button2);
 		    panel.add(button3);
 		    frame.pack();
-		    frame.setTitle("Sound Effect Buttons");
-	}
-	private void playSound(String fileName) {
-		System.out.println(fileName);
+		    frame.setTitle("Videos");
 	}
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -63,4 +60,5 @@ public class SoundEffects implements ActionListener {
 	          e.printStackTrace();
 	     }
 	}
+
 }
